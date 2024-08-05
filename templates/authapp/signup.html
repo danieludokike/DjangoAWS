@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Sigup {% endblock title %}
+
+{% block content %}
+
+<div class="container main-container">
+	<div class="row nm-row">
+		<div class="col-lg-7 nm-bgi d-none d-lg-flex">
+			<div class="overlay">
+				<div class="hero-item hero-item-1">
+					<h2>Create an account</h2>
+					<h2>Login to account</h2>
+					<h2>Use the app</h2>
+				</div>	
+			</div>
+		</div>
+		<div class="col-lg-5 nm-mb-1 nm-mb-md-1 nm-aic">
+			<div class="card">
+				<div class="card-content">
+					<div class="header">
+						<p class="h2">DJANGO AWS CRUD APP</p>
+						<p class="h2">Create an account to get started</p>
+					</div>
+					<form method="POST" action="{% url 'auth:signup' %}">
+						{% csrf_token %}
+						{% if messages %}
+						  {% for msg in messages  %}
+							<div style="color: red;">{{msg}}</div>
+						  {% endfor %}
+						{% endif %}
+						<div class="form-group">
+							<label for="inputEmail">Email</label>
+							<div class="input-group nm-gp">
+								<span class="nm-gp-pp"><i class="fas fa-envelope-open"></i></span>
+								<input id="inputEmail" name="email" class="form-control" type="email" tabindex="1" required>
+							</div>
+						</div>	
+
+						<div class="form-group">
+							<label for="inputUsername">Username</label>
+							<div class="input-group nm-gp">
+								<span class="nm-gp-pp"><i class="fas fa-user"></i></span>
+								<input id="inputUsername" name="username" class="form-control" type="text" tabindex="2"  required>
+							</div>
+						</div>	
+
+						<div class="form-group">
+							<label for="inputPassword">Password</label>
+							<div class="input-group nm-gp">
+								<span class="nm-gp-pp"><i class="fas fa-lock"></i></span>
+								<input id="inputPassword" name="password" class="form-control" type="password" tabindex="3"  required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="inputPassword">Confirm Password</label>
+							<div class="input-group nm-gp">
+								<span class="nm-gp-pp"><i class="fas fa-lock"></i></span>
+								<input id="inputPassword" name="password2" class="form-control" type="password" tabindex="4"  required>
+							</div>
+						</div>
+
+						<button type="submit" class="btn btn-block btn-primary nm-btn">Sign Up</button>
+						<hr />
+						<p class="text-center nm-ft-b nm-wh mb-0">
+							Already a member?
+							<a href="{% url 'auth:login' %}">Login</a>
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

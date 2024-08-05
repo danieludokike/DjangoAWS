@@ -1,0 +1,45 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- // Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Required meta tags // -->
+
+
+    <title>Django AWS CRUD APP | {% block title %} {% endblock title %}</title>
+
+
+	<!-- // Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;display=swap" rel="stylesheet">
+	<!-- Google Web Fonts // -->
+
+    <!-- // Template CSS files -->
+	<link href="{% static 'authapp/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'authapp/css/styles.css' %}" rel="stylesheet">
+	<!-- Template CSS files  // -->
+</head>
+<body>
+
+	<main class="d-flex">
+{% block content %}
+  
+{% endblock content %}
+	</main>
+	
+	<!-- // Vendor JS files -->
+	<script src="{% static 'authapp/js/jquery-3.6.0.min.js' %}"></script>
+	<script src="{% static 'authapp/js/bootstrap.bundle.min.js' %}"></script>
+	<!-- Vendor JS files // -->
+
+	<!-- Template JS files // -->
+	<script src="{% static 'authapp/js/script.js' %}"></script>
+	<!-- Template JS files // -->
+
+	<!-- Setting to allow preview of different color variants // -->
+	<!-- ======================================================= -->
+</body>
+
+<!-- Mirrored from nimoy.ceosdesigns.sk/template/v07/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Jul 2024 20:01:20 GMT -->
+</html>
