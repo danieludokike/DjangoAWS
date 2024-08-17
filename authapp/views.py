@@ -53,3 +53,8 @@ def signup_view(request):
         messages.error(request, "The two passwords do not match!")
         return redirect("auth:signup")
     return render(request, "authapp/signup.html")
+
+
+def logout_view(request):
+    logout(request)
+    return redirect("auth:login")

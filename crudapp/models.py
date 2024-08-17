@@ -1,10 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
-class Item(models.Model):
+class Task(models.Model):
     name = models.CharField(max_length=200)
-    description = models.TextField()
-    price = models.DecimalField(default=0.0, max_digits=10, decimal_places=2)
+    user = models.ForeignKey(User,related_name="user_task", on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
     
